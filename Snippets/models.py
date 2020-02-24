@@ -18,3 +18,6 @@ class Snippet(models.Model):
     description = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='snippets')
     code_quality = models.FloatField(null=True)
+
+    def is_owner(self, user):
+        return self.author == user
