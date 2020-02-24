@@ -215,6 +215,4 @@ dmypy.json
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
-SnippetSpaceBackend/
-manage.py
-templates/
+
