@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'drf_yasg'
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -53,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'SnippetSpaceBackend.urls'
+AUTH_USER_MODEL = 'Accounts.User'
 
 TEMPLATES = [
     {
