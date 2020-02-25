@@ -4,13 +4,14 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
-import Snippets
 from SnippetSpaceBackend.permissions import HasPermissions
+from Snippets.models import Snippet
+from Snippets.serializers import SnippetSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = SnippetSerializer
-    queryset = Snippets.objects.all()
+    queryset = Snippet.objects.all()
     lookup_field = 'username'
 
     permission_classes = [IsAuthenticated, HasPermissions]
