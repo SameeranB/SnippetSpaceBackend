@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "17dd3a53-0e24-48d8-8b7f-603763bfd9f8",
+		"name": "SnippetSpace-IWP",
+		"description": "This is the API workspace for SnippetSpace's IWP implementation.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Sameeran1203",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hostname}}/users/login",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						},
+						"description": "This endpoint is used to log in to the service."
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hostname}}/users/login",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 08 Mar 2020 20:01:06 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User logged in successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{hostname}}/users/me",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						},
+						"description": "Retrieve the details of the current user."
+					},
+					"response": [
+						{
+							"name": "Me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{hostname}}/users/me",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 08 Mar 2020 20:27:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.7.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"last_login\": null,\n    \"username\": \"sameeran\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"email\": \"sameeranbandishti93@gmail.com\",\n    \"date_joined\": \"2020-03-08T19:37:48.155417Z\",\n    \"contributions\": 0,\n    \"favorite_language\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/users",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "Endpoint to retreive all users on the platform."
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Sameeran1203",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "Sameeran1203",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hostname}}/users/signup",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						},
+						"description": "Endpoint to allow users to sign up for the service."
+					},
+					"response": []
+				},
+				{
+					"name": "Update (Add a favorite language)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "favorite_language",
+									"value": "Django",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hostname}}/users/test1",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"users",
+								"test1"
+							]
+						},
+						"description": "This Endpoint allows the user to edit his or her details. For now, it only allows the updation of the favorite language field."
+					},
+					"response": []
+				},
+				{
+					"name": "Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/users/test1",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"users",
+								"test1"
+							]
+						},
+						"description": "This endpoint allows users to retrieve details about a particular user"
+					},
+					"response": []
+				}
+			],
+			"description": "This contains the endpoints pertaining to users and user accounts.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Snippets",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/snippets?framework=Django&author=15",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"snippets"
+							],
+							"query": [
+								{
+									"key": "framework",
+									"value": "Django"
+								},
+								{
+									"key": "author",
+									"value": "15"
+								}
+							]
+						},
+						"description": "This endpoint returns a list of all the snippets on the platform"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "language",
+									"value": "django",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Authorization",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This snippet implements a basic authentication in Django. Please note that it is always recommended to use a third party library to ensure proper security.",
+									"type": "text"
+								},
+								{
+									"key": "special_instructions",
+									"value": "Please add this snippet to the views in your app.",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "def login(self, username, password):\n    user = authenticate(username=username, password=password)\n    if user is not null:\n        return token\n \n",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hostname}}/snippets",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"snippets"
+							]
+						},
+						"description": "This endpoint allows users to add their code snippets to the platform"
+					},
+					"response": []
+				},
+				{
+					"name": "Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/snippets/1",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"snippets",
+								"1"
+							]
+						},
+						"description": "This endpoint allows users to retreive details about a particular snippet."
+					},
+					"response": []
+				}
+			],
+			"description": "Set of endpoints to interact with and manage the snippets on the platform.",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "token {{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9b2c207f-44a4-46f1-9155-976de9b77398",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f77ee461-7793-4669-ba87-beb6f0e4193d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

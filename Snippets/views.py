@@ -1,9 +1,7 @@
-from django.shortcuts import render
-
 # Create your views here.
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from SnippetSpaceBackend.permissions import HasPermissions
@@ -21,7 +19,12 @@ class SnippetViewSet(viewsets.GenericViewSet,
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['framework', 'author']
 
-    permission_classes = [IsAuthenticated, HasPermissions]
+    permission_classes = [AllowAny, HasPermissions]
+
+    def list(self, request, *args, **kwargs):
+        return super(SnippetViewSet, self).list(self, request, *args, **kwargs)
+
+
 
     def create(self, request, *args, **kwargs):
         serializer_data = self.get_serializer(data=request.data)
